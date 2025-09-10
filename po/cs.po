@@ -54,7 +54,7 @@ msgstr "Tato obrazovka"
 
 #: src/e_mod_config.c:1298
 msgid "Use Theme Wallpaper"
-msgstr "Použít pozadí motivu"
+msgstr "Použít tapetu motivu"
 
 #: src/e_mod_main.c:25
 msgid "Look"
