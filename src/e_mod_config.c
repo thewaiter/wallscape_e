@@ -672,7 +672,6 @@ _pan_hilight(Evas_Object *obj EINA_UNUSED, Item *it)
      }
 }
 
-
 static void
 _pan_sel(Evas_Object *obj, Item *it)
 {
@@ -777,20 +776,20 @@ _item_sort(Item *it)
         sd->items = eina_list_sort(sd->items, num, _sort_cb);
         _e_smart_reconfigure_do(obj);
          if (sd->jump2hi)
-          {
-             Eina_List *l;
-             Item *it2 = NULL;
+           {
+              Eina_List *l;
+              Item *it2 = NULL;
 
-             EINA_LIST_FOREACH(sd->items, l, it2)
-               {
-                  if (it2->hilighted) break;
-                  it2 = NULL;
-               }
-             if (it2)
-               e_scrollframe_child_region_show(sd->info->sframe,
+              EINA_LIST_FOREACH(sd->items, l, it2)
+                {
+                   if (it2->hilighted) break;
+                   it2 = NULL;
+                }
+              if (it2)
+                e_scrollframe_child_region_show(sd->info->sframe,
                                                it2->x, it2->y, it2->w, it2->h);
-             sd->jump2hi = 1;
-          }
+              sd->jump2hi = 1;
+           }
      }
    if (sd->info->scans == 0)
      edje_object_signal_emit(sd->info->bg, "e,state,busy,off", "e");
@@ -981,7 +980,7 @@ _bg_clicked(void *data, Evas_Object *obj EINA_UNUSED, const char *emission EINA_
 static void
 _win_delete_cb(void *data EINA_UNUSED, Evas *e EINA_UNUSED, Evas_Object *obj, void *event EINA_UNUSED)
 {
-	obj = NULL;
+   obj = NULL;
 }
 
 static void
@@ -1256,7 +1255,6 @@ wp_browser_new()
      {
         const char *f = e_theme_edje_file_get("base/theme/backgrounds",
                                               "e/desktop/background");
-
         edje_object_file_set(info->mini, f, "e/desktop/background");
      }
 
@@ -1356,7 +1354,6 @@ wp_broser_free(Info *info)
    char *s;
 
    if (!info) return;
-   //~ e_object_del(E_OBJECT(info->win));
    E_FREE_FUNC(info->win, evas_object_del);
    if (info->dir) eina_iterator_free(info->dir);
    free(info->bg_file);
